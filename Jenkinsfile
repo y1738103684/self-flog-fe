@@ -8,6 +8,12 @@ pipeline {
                 checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'f6a748f8-bbb0-40f5-8f15-6c9467c6e63f', url: 'git@github.com:y1738103684/self-flog-fe.git']]])
             }
         }
+
+        stage('build project') {
+            steps {
+              sh 'node -v'
+            }
+        }
     }
 
     // 发送邮箱
